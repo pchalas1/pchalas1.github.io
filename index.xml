@@ -6,17 +6,67 @@
     <description>Recent content on Preetham Chalasani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Apr 2015 03:45:44 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2015 21:54:16 -0400</lastBuildDate>
     <atom:link href="http://preethamchalasani.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Sample</title>
-      <link>http://preethamchalasani.com/post/Sample/</link>
-      <pubDate>Sun, 05 Apr 2015 03:45:44 -0400</pubDate>
+      <title>MatlabRosTutorial</title>
+      <link>http://preethamchalasani.com/posts/matlab-ros-setup-tutorial/</link>
+      <pubDate>Sun, 05 Apr 2015 21:54:16 -0400</pubDate>
       
-      <guid>http://preethamchalasani.com/post/Sample/</guid>
-      <description>&lt;p&gt;My first sample post.&lt;/p&gt;
+      <guid>http://preethamchalasani.com/posts/matlab-ros-setup-tutorial/</guid>
+      <description>
+
+&lt;h3 id=&#34;setup:4648a9840b5c9d4c29a3abf329dfcd2c&#34;&gt;Setup&lt;/h3&gt;
 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://preethamchalasani.com/homepage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://preethamchalasani.com/homepage/</guid>
+      <description>&lt;!-- This file is the homepage of the website. --&gt;
+
+{{ partial &#34;header.html&#34; . }}
+
+&lt;body class=&#34;theme-base-08&#34;&gt;
+  {{ partial &#34;sidebar.html&#34; . }}
+
+  &lt;!-- See /layouts/indexes/category.html for explanation of this section --&gt;
+  &lt;div class=&#34;wrap&#34;&gt;
+    &lt;div class=&#34;masthead&#34;&gt;
+      &lt;div class=&#34;container&#34;&gt;      
+        &lt;h3 class=&#34;masthead-title&#34;&gt;
+          &lt;a href=&#34;http://preethamchalasani.com/homepage&#34; title=&#34;Home&#34;&gt;Home&lt;/a&gt;
+        &lt;/h3&gt;          
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+      &lt;!--
+        This section contains the content of our home page.
+
+        I have broken it into three main sections:
+          (1) about the blog
+          (2) about me
+          (3) Recent posts
+
+        The first two sections are pretty self explanatory.
+
+        In the recent posts section we ask Hugo to use the template found in
+        /layouts/posts/summary.html to show a summary of the 10 most recent
+        posts we have made.
+      --&gt;
+      &lt;div class=&#34;container content&#34;&gt;      
+
+        &lt;p class=&#34;lead&#34;&gt; Welcome to my Site! &lt;/p&gt;      
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;label for=&#34;sidebar-checkbox&#34; class=&#34;sidebar-toggle&#34;&gt;&lt;/label&gt;    
+  &lt;/body&gt;
+  &lt;/html&gt;</description>
     </item>
     
   </channel>

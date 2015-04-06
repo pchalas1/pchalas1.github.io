@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on Preetham Chalasani</title>
+    <link>http://preethamchalasani.com/categories/tutorial/</link>
+    <description>Recent content in Tutorial on Preetham Chalasani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Apr 2015 21:54:16 -0400</lastBuildDate>
+    <atom:link href="http://preethamchalasani.com/categories/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MatlabRosTutorial</title>
+      <link>http://preethamchalasani.com/posts/matlab-ros-setup-tutorial/</link>
+      <pubDate>Sun, 05 Apr 2015 21:54:16 -0400</pubDate>
+      
+      <guid>http://preethamchalasani.com/posts/matlab-ros-setup-tutorial/</guid>
+      <description>
+
+&lt;h3 id=&#34;setup:4648a9840b5c9d4c29a3abf329dfcd2c&#34;&gt;Setup&lt;/h3&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
