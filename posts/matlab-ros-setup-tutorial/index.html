@@ -10,16 +10,17 @@
     <title> MatlabRosTutorial </title>
     <link rel="canonical" href="http://preethamchalasani.com/posts/matlab-ros-setup-tutorial/">
     
-
 <link rel="stylesheet" href="http://preethamchalasani.com/css/poole.css">
-<link rel="stylesheet" href="http://preethamchalasani.com/css/syntax.css">
+<link rel="stylesheet" href="http://preethamchalasani.com/css/uno.css">
 <link rel="stylesheet" href="http://preethamchalasani.com/css/lanyon.css">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+
+
 
 </head>
 
 
-<body class="theme-base-08">
+<body class="theme-base-08" >
   
 
 
@@ -85,7 +86,88 @@
         <h5 id="date"> Sun Apr 5, 2015 </h5>
         
 
+<p>This tutorial will briefly describe how to use the robotics systems toolbox provided in R2015a, to interface with ROS. [Subscriber uses callback function]</p>
+
 <h3 id="setup:4648a9840b5c9d4c29a3abf329dfcd2c">Setup</h3>
+
+<ol>
+<li><p>I will be assuming that you have already innstalled <a href="http://wiki.ros.org/hydro/Installation/Ubuntu">ROS</a> and had setup appropriate environment variables.</p></li>
+
+<li><p>Create a folder for the project</p>
+
+<pre><code class="language-shell">mkdir -p dev/tutorial
+cd dev/tutorial
+touch MatlabRos.m
+</code></pre></li>
+
+<li><p>First get the URI for the master</p>
+
+<pre><code>MasterHost = getenv('ROS_MASTER_URI');
+</code></pre></li>
+
+<li><p>Next check whether a rosocre is running at that URI, if not, initialize one</p>
+
+<pre><code>Nodelist = [];
+try
+    Nodelist = rosnode('list');
+    disp('Master already initialized')
+catch
+    rosinit(MasterHost);
+    Nodelist = rosnode('list');
+end
+</code></pre></li>
+
+<li><p>Create a ros node for testing</p>
+
+<pre><code>Node = robotics.ros.Node('MatlabExperiment', MasterHost);
+disp('Node ''/MatlabExperiment'' created')
+</code></pre></li>
+
+<li><p>Create a publisher</p>
+
+<pre><code>PubMyName = robotics.ros.Publisher(Node, '/set_my_name' ,'std_msgs/String');
+</code></pre></li>
+
+<li><p>Create a subscriber and its corresponding callback function</p>
+
+<pre><code>SubMyName = rossubscriber('/set_my_name', @cbMyName);
+</code></pre>
+
+<p>Put the following function in <code>cbMyName.m</code></p>
+
+<pre><code>function cbMyName(~, message)
+    disp (['I recieved ',   message.Data])
+end
+</code></pre></li>
+
+<li><p>Now try to puplish something using <code>PubMyName</code></p>
+
+<pre><code>msg = rosmessage(PubMyName);
+msg.Data = 'Hello'
+send(PubMyName, msg)
+</code></pre>
+
+<p>You should see the following output</p>
+
+<pre><code>I recieved Hello
+</code></pre></li>
+</ol>
+
+<!-- 
+* Create a [timr](http://www.mathworks.com/help/matlab/matlab_prog/use-a-matlab-timer-object.html) object and specify the handle for a [Timer Callback Function](http://www.mathworks.com/help/matlab/matlab_prog/timer-callback-functions.html), say `cbFunction`. 
+
+    ```
+    % 250 hz
+    timr = timer('Period', 0.004, 'ExecutionMode','fixedRate');     % 250 hz
+    timr.TimerFcn = {@cbFunction, input1, input2};
+    ```
+    Start the timer
+
+    ```
+    start(timr)
+    ```
+    This will search for the function `cbFunction` in the search path and will call the function with the specified input at a specified frequency. Read more on timer callback functions [here](http://www.mathworks.com/help/matlab/matlab_prog/timer-callback-functions.html). 
+-->
 
       </section>
     </div>

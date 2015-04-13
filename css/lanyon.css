@@ -41,7 +41,7 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: Helvetica Neue, Georgia, "Times New Roman", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
 }
-@media (min-width: 30rem) {
+@media (min-width: 50rem) {
   .sidebar {
     font-size: .75rem; /* 14px */
   }
@@ -179,8 +179,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sidebar-nav-item {
   display: block;
-  padding: .5rem 1rem;
-  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 1rem 1rem ;
+  border-top: 1px solid rgba(255,255,255,.1);  
+  width: 14rem;
 }
 .sidebar-nav-item.active,
 a.sidebar-nav-item:hover,
