@@ -1,3 +1,3 @@
 # pchalas1.github.io
 
-[Website](preethamchalasani.com)
+[Website](http://preethamchalasani.com)
